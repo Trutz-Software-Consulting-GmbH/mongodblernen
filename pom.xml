@@ -3,4 +3,5 @@
     <groupId>de.trutz-software-consulting</groupId>
     <artifactId>mongodblernen</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 </project>
