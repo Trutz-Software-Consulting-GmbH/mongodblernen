@@ -2,5 +2,6 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: mvn
+  - name: Build
+    init: 'mvn clean package'
     command: 'echo "TODO: Replace with command to start project"'
