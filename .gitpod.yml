@@ -1,6 +1,7 @@
 image: gitpod/workspace-mongodb
 
 tasks:
-  - name: mongo
+  - name: mongod (Server)
     init: mkdir -p /workspace/data && mongod --dbpath /workspace/data
-    command: mongo
+  - name: mongo (Client)
+    command: mongo --quiet
