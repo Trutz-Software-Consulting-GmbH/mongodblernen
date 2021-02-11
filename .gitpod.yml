@@ -2,6 +2,10 @@ image: gitpod/workspace-mongodb
 
 tasks:
   - name: mongod (Server)
-    before: mkdir -p /workspace/data && mongod --dbpath /workspace/data
+    before:
+      mkdir -p /workspace/data
+      mongod --dbpath /workspace/data
   - name: mongo (Client)
-    command: mongo --quiet
+    command:
+      sleep 2
+      mongo --quiet
