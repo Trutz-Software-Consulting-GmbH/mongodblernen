@@ -1,5 +1,6 @@
-image: gitpod/workspace-full
+image: gitpod/workspace-mongodb
 
 tasks:
-  - name: Build
-    init: mvn clean package
+  - name: mongo
+    init: mkdir -p /workspace/data && mongod --dbpath /workspace/data
+    command: mongo
