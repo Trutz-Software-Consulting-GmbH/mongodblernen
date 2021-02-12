@@ -40,6 +40,8 @@ public class DemoApplication implements ApplicationRunner {
         Document johndoe = new Document();
         johndoe.append("name", "John Doe");
         personen.insertOne(johndoe);
+
+        personen.drop();
     }
 
 }
