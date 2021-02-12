@@ -6,4 +6,6 @@ tasks:
   - name: mongo (Client)
     init: gp await-port 27017
     command: mongo --quiet
-  - command: mvn clean package
+  - command: mvn clean package -DskipTests
+    openMode: split-right
+
