@@ -4,5 +4,6 @@ tasks:
   - name: mongod (Server)
     before: mkdir -p /workspace/data && mongod --dbpath /workspace/data
   - name: mongo (Client)
-    init: sleep 1 && while [ ! -f /workspace/data/mongod.lock ]; do sleep 1; done
-    command: sleep 2 && mongo --quiet
+    init: gp await-port 27017
+    command: mongo --quiet
+  - command: mvn clean package
