@@ -11,7 +11,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.MongoOperations;
 
 @SpringBootApplication
 public class DemoApplication implements ApplicationRunner {
@@ -26,21 +26,20 @@ public class DemoApplication implements ApplicationRunner {
     MongoClient mongoClient;
 
     @Autowired
-    MongoTemplate mongoTemplate;
+    MongoOperations mongoOps;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         LOG.info("MongoDB lernen - Lektion 1 gestartet mit folgenden Parameter : {}", args.getOptionNames());
 
-        // Alle Datenbanken und aktuell verwendete Datenbank loggen
+        // Alle Datenbanken loggen
         mongoClient.listDatabaseNames().forEach(dbName -> LOG.info("Database {}", dbName));
-        LOG.info("Current Database {}", mongoTemplate.getDb().getName());
 
         // Ein Document einfügen
-        MongoCollection<Document> personenCollection = mongoTemplate.getDb().getCollection("personen");
+        MongoCollection<Document> personen = mongoOps.getCollection("personen");
         Document johndoe = new Document();
         johndoe.append("name", "John Doe");
-        personenCollection.insertOne(johndoe);
+        personen.insertOne(johndoe);
     }
 
 }
