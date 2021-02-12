@@ -8,8 +8,3 @@ tasks:
     command: mongo --quiet
   - command: mvn clean package -DskipTests
     openMode: split-right
-
-
-vscode:
-  extensions:
-    - vscjava.vscode-java-test@0.28.0:x6wfg2fOKUMJQR+BcLLfKQ==
