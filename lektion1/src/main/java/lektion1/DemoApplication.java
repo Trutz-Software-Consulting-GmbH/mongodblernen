@@ -2,6 +2,7 @@ package lektion1;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import static com.mongodb.client.model.Filters.*;
 
 import org.bson.Document;
 import org.slf4j.Logger;
@@ -41,7 +42,9 @@ public class DemoApplication implements ApplicationRunner {
         johndoe.append("name", "John Doe");
         personen.insertOne(johndoe);
 
-        personen.drop();
+        // Zuvor eingefügtes Document finden 
+        personen.find(eq("name", "John Doe")).limit(1).iterator()
+                .forEachRemaining(document -> LOG.info("name={}", document.get("name")));
     }
 
 }
