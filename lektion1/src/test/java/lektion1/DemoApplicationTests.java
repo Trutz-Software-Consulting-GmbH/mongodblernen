@@ -46,8 +46,7 @@ class DemoApplicationTests {
         String name = "John Doe " + System.currentTimeMillis();
 
         // Ein Document einfügen
-        Person johndoe = new Person();
-        johndoe.name = name;
+        Person johndoe = new Person(name);
         mongoOps.insert(johndoe);
 
         // Zuvor eingefügtes Document finden
@@ -62,8 +61,7 @@ class DemoApplicationTests {
         String name = "John Doe " + System.currentTimeMillis();
 
         // Ein Document einfügen
-        Person johndoe = new Person();
-        johndoe.name = name;
+        Person johndoe = new Person(name);
         personRepository.save(johndoe);
 
         // Zuvor eingefügtes Document finden
