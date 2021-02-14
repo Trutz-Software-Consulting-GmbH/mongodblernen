@@ -4,13 +4,6 @@
 
 ## Lektion 1
 
-In dieser Lektion lernst Du die grundlegenden Strukturen von MongoDB:
-- `mongod`
-- `MongoDatabase`
-- `MongoCollection`
-- `Document`
+In dieser Lektion lernst Du mit Hilfe eines `MongoClient`s die Datenbanken
+innerhalb eines MongoDB Servers (`mongod`) aufzulisten.
 
-Du lernst auf drei unterschiedliche Arten auf MongoDB zuzugreifen:
-- Nativer MongoDB Treiber (nativer Java Treiber)
-- `MongoOperations` alias `MongoTemplate` in Spring Data MongoDB
-- `MongoRepository` die elegante Methode in Spring Data MongoDB
