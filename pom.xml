@@ -12,16 +12,23 @@
     <groupId>de.trutz-software-consulting</groupId>
     <artifactId>mongodblernen</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>MongoDB lernen - Parent</name>
-    <packaging>pom</packaging>
+    <name>MongoDB lernen</name>
 
     <properties>
         <java.version>11</java.version>
     </properties>
 
-    <modules>
-        <module>lektion1</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
