@@ -4,6 +4,7 @@
 
 ## Lektion 1
 
-In dieser Lektion lernst Du mit Hilfe eines `MongoClient`s die Datenbanken
+Du lernst mit Hilfe eines `MongoClient`s die Datenbanken
 innerhalb eines MongoDB Servers (`mongod`) aufzulisten.
-
+Du lernst einen `MongoClient` zu instanzieren, sowohl über 
+den nativen MongoDB Treiber als auch über Spring `@Autowired`.
