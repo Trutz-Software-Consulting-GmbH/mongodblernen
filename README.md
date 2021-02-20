@@ -2,7 +2,7 @@
 
 # MongoDB lernen
 
-## Lektion 1
+## Lektion 01
 
 Du lernst mit Hilfe eines `MongoClient`s die Datenbanken
 innerhalb eines MongoDB Servers (`mongod`) aufzulisten.
