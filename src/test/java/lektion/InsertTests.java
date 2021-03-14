@@ -7,11 +7,15 @@ import com.mongodb.client.MongoCollection;
 
 import org.bson.Document;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class InsertTests {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(InsertTests.class);
 
     @Autowired
     private MongoClient mongoClient;
@@ -24,6 +28,7 @@ public class InsertTests {
             me.append("name", "Christian Trutz");
             personen.insertOne(me);
         });
+        LOGGER.debug("10.000 Dokumente mit Hilfe der nativen MongoDB Java API hinzugefügt.");
     }
 
 }
