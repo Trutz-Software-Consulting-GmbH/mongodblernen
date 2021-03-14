@@ -18,10 +18,10 @@ public class InsertTests {
 
     @Test
     void insertViaNativeAPI() {
-        Document me = new Document();
-        me.append("name", "Christian Trutz");
         MongoCollection<Document> personen = mongoClient.getDatabase("test").getCollection("personen");
         Stream.iterate(1, n -> n + 1).limit(10_000).forEach(i -> {
+            Document me = new Document();
+            me.append("name", "Christian Trutz");
             personen.insertOne(me);
         });
     }
