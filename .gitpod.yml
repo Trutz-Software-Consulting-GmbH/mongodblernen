@@ -6,7 +6,8 @@ tasks:
   - name: mongo (Client)
     init: gp await-port 27017
     command: mongo --quiet
-  - command: mvn clean package -DskipTests
+  - init: git config --global alias.next '! git checkout $(/workspace/mongodblernen/firstchild.sh)'
+    command: mvn clean package -DskipTests
     openMode: split-right
 vscode:
   extensions:
